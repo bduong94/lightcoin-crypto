@@ -2,17 +2,31 @@ let balance = 500.00;
 
 class Withdrawal {
 
+  //Default values
   constructor(amount) {
     this.amount = amount;
   }
 
+  //Subtracts from current balance
   commit() {
     balance -= this.amount;
   }
 
 }
 
+class Deposit {
 
+  //Default values
+  constructor(amount) {
+    this.amount = amount;
+  }
+
+  //Adds into current balance
+  commit() {
+    balance += this.amount;
+  }
+
+}
 
 
 // DRIVER CODE BELOW
