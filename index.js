@@ -1,34 +1,4 @@
-let balance = 500.00;
-
-class Withdrawal {
-
-  //Default values
-  constructor(amount, account) {
-    this.amount = amount;
-    this.account = account;
-  }
-
-  //Subtracts from current balance
-  commit() {
-    this.account.balance -= this.amount;
-  }
-
-}
-
-class Deposit {
-
-  //Default values
-  constructor(amount, account) {
-    this.amount = amount;
-    this.account = account;
-  }
-
-  //Adds into current balance
-  commit() {
-    this.account.balance += this.amount;
-  }
-
-}
+// let balance = 500.00;
 
 //Class to create a new account
 class Account {
@@ -40,6 +10,35 @@ class Account {
   }
 
 }
+
+//Class to record transactions
+class Transaction {
+
+  //Default values
+  constructor(amount, account) {
+    this.amount = amount;
+    this.account = account;
+  }
+}
+
+class Withdrawal extends Transaction {
+
+  //Subtracts from current balance
+  commit() {
+    this.account.balance -= this.amount;
+  }
+
+}
+
+class Deposit extends Transaction {
+
+  //Adds into current balance
+  commit() {
+    this.account.balance += this.amount;
+  }
+
+}
+
 
 // DRIVER CODE BELOW
 // We use the code below to "drive" the application logic above and make sure it's working as expected
